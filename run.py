@@ -19,20 +19,26 @@ import statistics
 #----------DEFINIÇÃO DA LAT LON
 def get_user_date():
             
-            latitude_slider = st.sidebar.number_input("Latitude (entre -23.72412 e -23.46010)",-23.72412, -23.46010,-23.60000, step=0.01, format="%.5f")
+            grupo = st.sidebar.number_input("SeleGrupo",1, 9,1, step=1)
+            with st.form(key='my_form'):
+                text_input = st.text_input(label='Enter your name')
+                submit_button = st.form_submit_button(label='Submit')
 
-            user_data = {'componente': latitude_slider}
-                         
+            user_data = {'grupo': grupo,
+                        'form': text_input}
+
             return user_data
 
 #----------MAIN
 def main():
     user_input_variables = get_user_date()
+    grupo = user_input_variables['grupo']
 
-
-    #st.sidebar.write(int(user_input_variables['cep']))
-
-    st.sidebar.write('#manda nuggets')
+    st.write('Queridas Lin e Lana, /n não tenho como agradecer pelo todo carinho e dedicaçõ que tiveram em preparar as aulas e por separar esse conteúdo maravilhoso. É sério, não tem como. A crise ta braba. Manda nuggets pls')
+    st.write('#manda nuggets')
+    st.write(user_input_variables['form'])
+    st.image('nuggets.jpg')
+    st.image('love.gif')
 
 
 #----------FUNCAO DE ESTIMATIVA DE DENSIDADE DE CRIMES
