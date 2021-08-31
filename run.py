@@ -19,34 +19,35 @@ import statistics
 #----------DEFINIÇÃO DA LAT LON
 def get_user_date():
             
-            grupo = st.sidebar.number_input("SeleGrupo",1, 9,1, step=1)
-            with st.form(key='my_form'):
-                text_input = st.text_input(label='Enter your name')
-                submit_button = st.form_submit_button(label='Submit')
+            grupo = st.sidebar.number_input("Selecionar Grupo",1, 9,1, step=1)
 
-            user_data = {'grupo': grupo,
-                        'form': text_input}
+            user_data = {'grupo': grupo}
 
             return user_data
 
 #----------MAIN
 def main():
-    user_input_variables = get_user_date()
-    grupo = user_input_variables['grupo']
-    if grupo==1:
-        st.write('Queridas Lin e Lana, /n não tenho como agradecer pelo todo carinho e dedicaçõ que tiveram em preparar as aulas e por separar esse conteúdo maravilhoso. É sério, não tem como. A crise ta braba. Manda nuggets pls')
-    if grupo==2:
-        st.write('texto grupo 2')
-    else: 
-        st.write('galeris, vcs entenderam a lógica')
-    st.write('Att., Grupo {}'.format(grupo))
-    st.write('#manda nuggets')
-    st.write(user_input_variables['form'])
-    st.image('nuggets.jpg')
-    st.image('love.gif')
+    
+    col1, col2, col3 = st.columns([1,10,1])
+    with col2:
+        user_input_variables = get_user_date()
+        grupo = user_input_variables['grupo']
+        if grupo==1:
+            st.write('Queridas Lin e Lana,')
+            st.write('não tenho como agradecer pelo todo carinho e dedicaçõ que tiveram em preparar as aulas e por separar esse conteúdo maravilhoso. É sério, não tem como. A crise ta braba. Manda nuggets pls')
+        elif grupo==2:
+            st.write('texto grupo 2')
+        else: 
+            st.write('galeris, vcs entenderam a lógica')
+        st.write('Att., Grupo {}'.format(grupo))
+        
+    col1, col2, col3 = st.columns([1,1,1])
+    
+    with col2:
+        st.write('#manda nuggets')
+        st.image('nuggets.jpg', width=200)
+        st.image('love.gif')
 
-
-#----------FUNCAO DE ESTIMATIVA DE DENSIDADE DE CRIMES
     
 
 
