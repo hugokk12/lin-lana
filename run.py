@@ -33,8 +33,13 @@ def get_user_date():
 def main():
     user_input_variables = get_user_date()
     grupo = user_input_variables['grupo']
-
-    st.write('Queridas Lin e Lana, /n não tenho como agradecer pelo todo carinho e dedicaçõ que tiveram em preparar as aulas e por separar esse conteúdo maravilhoso. É sério, não tem como. A crise ta braba. Manda nuggets pls')
+    if grupo==1:
+        st.write('Queridas Lin e Lana, /n não tenho como agradecer pelo todo carinho e dedicaçõ que tiveram em preparar as aulas e por separar esse conteúdo maravilhoso. É sério, não tem como. A crise ta braba. Manda nuggets pls')
+    if grupo==2:
+        st.write('texto grupo 2')
+    else: 
+        st.write('galeris, vcs entenderam a lógica')
+    st.write('Att., Grupo {}'.format(grupo))
     st.write('#manda nuggets')
     st.write(user_input_variables['form'])
     st.image('nuggets.jpg')
